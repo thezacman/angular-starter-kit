@@ -9,7 +9,7 @@ describe('homepage', function() {
 
       expect((header).count()).toEqual(1);
       expect(header.get(0).element(by.css('.md-toolbar-tools')).getText())
-          .toEqual('Angular Starter Kit');
+          .toEqual('AngularJS Navbar');
     });
   });
 

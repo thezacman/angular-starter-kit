@@ -1,14 +1,13 @@
 {
-  "version": "1.0.1",
-  "name": "Angular boilerplate",
+  "version": "1.0",
+  "name": "AngularJS Navbar",
   "launch_path": "/index.html",
-  "description": "Angular boilerplate",
+  "description": "AngularJS Navbar",
   "icons": {
     "128": "/images/icon-128x128.png"
   },
   "developer": {
-    "name": "Andrea Sonny <andreasonny83@gmail.com>",
-    "url": "https://github.com/andreasonny83"
+    "name": "Zachary Winstrom",
   },
   "installs_allowed_from": [
     "*"
@@ -18,8 +17,8 @@
   },
   "locales": {
     "en": {
-      "name": "Angular boilerplate",
-      "description": "Angular boilerplate"
+      "name": "AngularJS Navbar",
+      "description": "AngularJS Navbar"
     }
   }
 }

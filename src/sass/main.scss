@@ -1,13 +1,141 @@
-/******************************************************************
+@import "../../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
+// https://github.com/jonsuh/hamburgers
 
- Angular Boilderplate
+$navbar-background-color: #2B386F;
+$navbar-font-color: #FFFFFF;
+$roboto-font-family: 'Roboto', sans-serif;
+$small-breakpoint: 600px;
+$small-breakpoint-str: "only screen and (max-width : #{$small-breakpoint})";
+$very-small-breakpoint: 290px;
+$very-small-breakpoint-str: "only screen and (max-width : #{$very-small-breakpoint})";
 
-******************************************************************/
+* {
+   box-sizing: border-box;
+}
 
-/* Partials */
-@import "partials/variables";
+html {
+   font-size: 16px;   
+}
 
-/* Modules */
-@import "modules/main";
-@import "modules/home";
-@import "modules/rating";
+nav {
+   width: 100%;
+   display: flex;
+   padding: .5rem;
+   color: $navbar-font-color;
+   font-family: $roboto-font-family;
+   background-color: $navbar-background-color;
+
+   @media #{$small-breakpoint-str} {
+      display: block;
+      text-align: center;
+   }
+}
+
+.hide-for-small, .hide-for-small > div {
+   flex: 1;
+   display: flex;
+}
+
+.hide-for-small > div {
+   align-items: center;
+   justify-content: center;
+
+   > div {
+      text-align: center;
+   }
+}
+
+div.show-for-small {
+   max-height: 0;
+   overflow: hidden;
+   transition: max-height .5s ease;
+
+   &.expanded {
+      max-height: 200px;
+   }
+
+   div {
+      text-align: right;
+      padding-top: 1rem;
+      display: inline-block;
+
+      @media #{$very-small-breakpoint-str} {
+         text-align: center;
+      }
+   }         
+}
+
+img {
+   display: block;
+   height: 2.5rem;
+}
+
+.login-button {
+   border: none;
+   cursor: pointer;
+   border-radius: 5px;
+   outline-color: #FFF;
+   padding: .5rem 1rem;
+   font-family: inherit;
+   background-color: #000;
+   color: $navbar-font-color;
+
+   &:hover {
+      background-color: lighten(#000, 20%);
+   }
+
+   @media #{$small-breakpoint-str} {
+      display: inline-block;
+      margin-bottom: .25rem;
+   }
+}
+
+label, input {
+   display: inline-block;
+}
+
+label {
+   margin: 0 1rem;
+   margin-bottom: .5rem;
+}
+
+input {
+   width: 10rem;
+   padding: .25rem;
+   font-family: inherit;
+
+   @media #{$small-breakpoint-str} {
+      margin-bottom: .5rem;
+   }
+
+   @media #{$very-small-breakpoint-str} {
+      width: 100%;
+   }
+}
+
+.hamburger {
+   top: 0;
+   right: 0;
+   position: absolute;
+   outline-color: #FFF;
+   outline-offset: -.5rem;
+}
+
+// Visibility classes
+@media #{$small-breakpoint-str} {
+   .hide-for-small {
+      display: none;
+   }
+}
+
+.show-for-small {
+   display: none;
+
+   @media #{$small-breakpoint-str} {
+      display: block;
+
+      &.use-inline-block {
+         display: inline-block;
+      }
+   }
+}
